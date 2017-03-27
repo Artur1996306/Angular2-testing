@@ -10,22 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 /**
- * Created by arthur.panosyan on 3/23/2017.
+ * Created by arthur.panosyan on 3/25/2017.
  */
-var BannerComponent = (function () {
-    function BannerComponent() {
-        this.title = 'Test Tour of Heroes';
+var AppComponent = (function () {
+    function AppComponent() {
     }
-    BannerComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'app-banner',
-            templateUrl: 'banner.component.html',
-            styleUrls: ['banner.component.css']
+            selector: 'my-app',
+            template: " <app-inline-banner></app-inline-banner>\n              <app-welcome></app-welcome>\n              <nav>\n                <a routerLink=\"/dashboard\">Dashboard</a>\n                <a routerLink=\"/heroes\">Heroes</a>\n                <a routerLink=\"/about\">About</a>\n              </nav>\n              <router-outlet></router-outlet>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], BannerComponent);
-    return BannerComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.BannerComponent = BannerComponent;
-//# sourceMappingURL=banner.component.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

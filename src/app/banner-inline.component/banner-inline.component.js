@@ -8,24 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/**
+ * Created by arthur.panosyan on 3/25/2017.
+ */
 var core_1 = require('@angular/core');
 /**
  * Created by arthur.panosyan on 3/23/2017.
  */
-var BannerComponent = (function () {
-    function BannerComponent() {
+var BannerInlineComponent = (function () {
+    function BannerInlineComponent() {
         this.title = 'Test Tour of Heroes';
     }
-    BannerComponent = __decorate([
+    BannerInlineComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'app-banner',
-            templateUrl: 'banner.component.html',
-            styleUrls: ['banner.component.css']
+            selector: 'app-inline-banner',
+            template: '<h1>{{title}}</h1>'
         }), 
         __metadata('design:paramtypes', [])
-    ], BannerComponent);
-    return BannerComponent;
+    ], BannerInlineComponent);
+    return BannerInlineComponent;
 }());
-exports.BannerComponent = BannerComponent;
-//# sourceMappingURL=banner.component.js.map
+exports.BannerInlineComponent = BannerInlineComponent;
+//# sourceMappingURL=banner-inline.component.js.map

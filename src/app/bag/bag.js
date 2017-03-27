@@ -10,22 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 /**
- * Created by arthur.panosyan on 3/23/2017.
+ * Created by arthur.panosyan on 3/25/2017.
  */
-var BannerComponent = (function () {
-    function BannerComponent() {
-        this.title = 'Test Tour of Heroes';
+var ButtonComponent = (function () {
+    function ButtonComponent() {
+        this.isOn = false;
     }
-    BannerComponent = __decorate([
+    ButtonComponent.prototype.clicked = function () {
+        this.isOn = !this.isOn;
+    };
+    Object.defineProperty(ButtonComponent.prototype, "message", {
+        get: function () {
+            return "The light is " + (this.isOn ? 'On' : 'Off');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ButtonComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'app-banner',
-            templateUrl: 'banner.component.html',
-            styleUrls: ['banner.component.css']
+            selector: 'button-comp',
+            template: "\n    <button (click)=\"clicked()\">Click me!</button>\n    <span>{{message}}</span>"
         }), 
         __metadata('design:paramtypes', [])
-    ], BannerComponent);
-    return BannerComponent;
+    ], ButtonComponent);
+    return ButtonComponent;
 }());
-exports.BannerComponent = BannerComponent;
-//# sourceMappingURL=banner.component.js.map
+exports.ButtonComponent = ButtonComponent;
+//# sourceMappingURL=bag.js.map

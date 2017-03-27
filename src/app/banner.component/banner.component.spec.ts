@@ -14,10 +14,9 @@
 //   let de: DebugElement;
 //   let el: HTMLElement;
 //
-//   beforeAll(async(() => {
+//   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       imports: [BannerComponent],
-//       declarations: [BannerComponent], // declare the test component
+//       declarations: [BannerComponent],
 //       providers: [{provide: ComponentFixtureAutoDetect, useValue: true}]
 //     })
 //       .compileComponents();  // compile template and css

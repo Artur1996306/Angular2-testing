@@ -10,22 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 /**
- * Created by arthur.panosyan on 3/23/2017.
+ * Created by arthur.panosyan on 3/25/2017.
  */
-var BannerComponent = (function () {
-    function BannerComponent() {
-        this.title = 'Test Tour of Heroes';
+var TitleCasePipe = (function () {
+    function TitleCasePipe() {
     }
-    BannerComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'app-banner',
-            templateUrl: 'banner.component.html',
-            styleUrls: ['banner.component.css']
-        }), 
+    TitleCasePipe.prototype.transform = function (input) {
+        return input.length === 0 ? '' :
+            input.replace(/\w\S*/g, (function (txt) { return txt[0].toUpperCase() + txt.substr(1).toLowerCase(); }));
+    };
+    TitleCasePipe = __decorate([
+        core_1.Pipe({ name: 'titlecase', pure: false }), 
         __metadata('design:paramtypes', [])
-    ], BannerComponent);
-    return BannerComponent;
+    ], TitleCasePipe);
+    return TitleCasePipe;
 }());
-exports.BannerComponent = BannerComponent;
-//# sourceMappingURL=banner.component.js.map
+exports.TitleCasePipe = TitleCasePipe;
+//# sourceMappingURL=title-case.pipe.js.map

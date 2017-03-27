@@ -38,11 +38,6 @@ module.exports = function (config) {
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
 
-
-      //external files
-      'src/app/banner.component/banner.component.html',
-      'src/app/banner.component/banner.component.css',
-
       // RxJs
       {pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false},
       {pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false},
@@ -70,21 +65,21 @@ module.exports = function (config) {
       {pattern: appBase + '**/*.js.map', included: false, watched: false}
     ],
 
-    // Proxied base paths for loading assets
-    proxies: {
-      // required for modules fetched by SystemJS
-      '/base/src/node_modules/': '/base/node_modules/'
-    },
-
+    proxies: {},
     exclude: [],
     preprocessors: {},
-    reporters: ['kjhtml'],
 
     port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
+    colors: true, // default
+    logLevel: config.LOG_INFO, // default
+    autoWatch: true, // default
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+    browserNoActivityTimeout: 20000, //10000
+    concurrency: Infinity, // default
+    // detached: true, //no console
+    protocol: 'http:', // default
+    restartOnFileChange: true,
+    retryLimit: 1 //2
   })
-}
+};
