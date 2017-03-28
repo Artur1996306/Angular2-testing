@@ -20,6 +20,9 @@ describe('BannerInlineComponent (inline template)', function () {
         de = fixture.debugElement.query(platform_browser_1.By.css('h1'));
         el = de.nativeElement;
     });
+    xit('Error, but not detected', function () {
+        expect(el.textContent).toContain(comp.title);
+    });
     it('should display original title', function () {
         expect(el.textContent).toBe('');
     });
@@ -28,7 +31,6 @@ describe('BannerInlineComponent (inline template)', function () {
         expect(el.textContent).toContain(comp.title);
     });
     it('should display a different test title', function () {
-        fixture.detectChanges();
         comp.title = 'Test Title';
         fixture.detectChanges();
         expect(el.textContent).toContain('Test Title');

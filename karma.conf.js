@@ -10,6 +10,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      // require('karma-firefox-launcher'),
       require('karma-jasmine-html-reporter')
     ],
 
@@ -65,7 +66,12 @@ module.exports = function (config) {
       {pattern: appBase + '**/*.js.map', included: false, watched: false}
     ],
 
-    proxies: {},
+    // Proxied base paths for loading assets
+    proxies: {
+      // required for modules fetched by SystemJS
+      '/base/src/node_modules/': '/base/node_modules/'
+    },
+
     exclude: [],
     preprocessors: {},
 
@@ -74,7 +80,6 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO, // default
     autoWatch: true, // default
     browsers: ['Chrome'],
-    singleRun: false,
     browserNoActivityTimeout: 20000, //10000
     concurrency: Infinity, // default
     // detached: true, //no console

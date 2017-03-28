@@ -29,6 +29,10 @@ describe('BannerInlineComponent (inline template)', () => {
     el = de.nativeElement;
   });
 
+  xit('Error, but not detected', () => {
+    expect(el.textContent).toContain(comp.title);
+  });
+
   it('should display original title', () => {
     expect(el.textContent).toBe('');
   });
@@ -39,7 +43,6 @@ describe('BannerInlineComponent (inline template)', () => {
   });
 
   it('should display a different test title', () => {
-    fixture.detectChanges();
     comp.title = 'Test Title';
     fixture.detectChanges();
     expect(el.textContent).toContain('Test Title');

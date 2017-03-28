@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
   selector: 'my-app',
   template: ` <app-inline-banner></app-inline-banner>
               <app-welcome></app-welcome>
+  <aaaaa></aaaaa>
               <nav>
                 <a routerLink="/dashboard">Dashboard</a>
                 <a routerLink="/heroes">Heroes</a>
